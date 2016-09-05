@@ -1,6 +1,6 @@
 <?php
 
-namespace bazilio\stubsgenerator;
+namespace webvimark\stubsgenerator;
 
 use yii\console\Controller;
 use yii\console\Exception;
