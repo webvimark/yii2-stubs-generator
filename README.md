@@ -38,13 +38,12 @@ To use this extension, simply add the following code in your application configu
         'class' => 'webvimark\stubsgenerator\StubsController',
 
         // This configs will be always will be used in stub generation. It can be empty
-        /**
-        'configs' => [
-        	'console/config/main.php',
-        	'common/config/main.php',
-        	'frontend/config/main.php',
-        ],
-        */
+        
+//            'configs' => [
+//                'console/config/main.php',
+//                'common/config/main.php',
+//                'frontend/config/main.php',
+//            ],
     ],
 ],
 ```
