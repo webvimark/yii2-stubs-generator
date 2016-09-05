@@ -1,5 +1,5 @@
 {
-    "name": "bazilio/yii2-stubs-generator",
+    "name": "webvimark/yii2-stubs-generator",
     "description": "Yii2 component stubs generator for Yii::$app",
     "type": "yii2-extension",
     "keywords": ["yii2", "stubs", "autocomplete", "phpstorm"],
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "bazilio\\stubsgenerator\\": ""
+            "webvimark\\stubsgenerator\\": ""
         }
     }
 }

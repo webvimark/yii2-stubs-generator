@@ -7,6 +7,24 @@ use yii\console\Exception;
 
 class StubsController extends Controller
 {
+    /**
+     * You can specify multiple configs. This configs will be always will be used in stub generation.
+     * For example:
+     *
+     * ```php
+     *
+     * [
+     *     'console/config/main.php',
+     *     'common/config/main.php',
+     *     'frontend/config/main.php',
+     * ]
+     *
+     * ```
+     *
+     * @var array
+     */
+    public $configs = [];
+
     public $outputFile = null;
 
     protected function getTemplate()
@@ -52,7 +70,9 @@ TPL;
 
         $components = [];
 
-        foreach (\Yii::$app->requestedParams as $configPath) {
+        $configs = array_merge($this->configs, \Yii::$app->requestedParams);
+
+        foreach ($configs as $configPath) {
             if (!file_exists($configPath)) {
                 throw new Exception('Config file doesn\'t exists: ' . $configPath);
             }

@@ -1,9 +1,7 @@
 Yii::$app stubs generator for Yii 2
 ===================================
-[![Latest Stable Version](https://poser.pugx.org/bazilio/yii2-stubs-generator/v/stable)](https://packagist.org/packages/bazilio/yii2-stubs-generator) 
-[![Total Downloads](https://poser.pugx.org/bazilio/yii2-stubs-generator/downloads)](https://packagist.org/packages/bazilio/yii2-stubs-generator) 
-[![Latest Unstable Version](https://poser.pugx.org/bazilio/yii2-stubs-generator/v/unstable)](https://packagist.org/packages/bazilio/yii2-stubs-generator) 
-[![License](https://poser.pugx.org/bazilio/yii2-stubs-generator/license)](https://packagist.org/packages/bazilio/yii2-stubs-generator)
+
+Fork from awesome bazilio91/yii2-stubs-generator. All credits to bazilio91.
 
 This extension provides no-more-butthurt components autocomplete generator command for Yii 2.
 
@@ -17,13 +15,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --dev --prefer-dist bazilio/yii2-stubs-generator
+composer require webvimark/yii2-stubs-generator
 ```
 
 or add
 
 ```json
-"bazilio/yii2-stubs-generator": "~1"
+"webvimark/yii2-stubs-generator": "~1"
 ```
 
 to the `require-dev` section of your `composer.json`.
@@ -37,17 +35,29 @@ To use this extension, simply add the following code in your application configu
 ```php
 'controllerMap' => [
     'stubs' => [
-        'class' => 'bazilio\stubsgenerator\StubsController',
+        'class' => 'webvimark\stubsgenerator\StubsController',
+
+        // This configs will be always will be used in stub generation. It can be empty
+        /**
+        'configs' => [
+        	'console/config/main.php',
+        	'common/config/main.php',
+        	'frontend/config/main.php',
+        ],
+        */
     ],
 ],
 ```
 
 ```
-# generate stubs for console application
+# generate stubs with default configs
+php yii stubs
+
+# generate stubs for console application (plus default configs)
 php yii stubs console/config/main.php
 
 # to generate stubs for several apps
-php yii stubs console/config/main.php common/config/main.php frontend/config/main.php
+php yii stubs console/config/main.php common/config/main.php frontend/config/main.php (plus default configs)
 ```
 
 File with stubs by default located in vendor directory.
