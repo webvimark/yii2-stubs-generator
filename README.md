@@ -15,13 +15,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-composer require webvimark/yii2-stubs-generator
+composer require webvimark/yii2-stubs-generator --dev
 ```
 
 or add
 
 ```json
-"webvimark/yii2-stubs-generator": "~1"
+"webvimark/yii2-stubs-generator": "^1"
 ```
 
 to the `require-dev` section of your `composer.json`.
